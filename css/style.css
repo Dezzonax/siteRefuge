@@ -1,0 +1,56 @@
+/* navbar part */
+
+nav {
+    margin-bottom: 1.5em;
+}
+
+.navbarIcon {
+    max-height: 1.5em;
+}
+
+/* fin navbar part */
+
+/* footer part */
+
+footer {
+    background-color: lightblue;
+    margin-top: 1.5em;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5em 0;
+}
+
+.footer > * {
+    margin: 0.5em 0;
+    width: fit-content;
+}
+
+.footerCNDDLA {
+    display: flex;
+}
+
+p.footerP {
+    margin: auto 0;
+    text-align: center;
+}
+
+img#logoCNDDLA {
+    max-height: 6em;
+    padding-right: 1em;
+}
+
+/* fin footer part */
+
+.conteneur-de-cartes {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1em 0;
+}
