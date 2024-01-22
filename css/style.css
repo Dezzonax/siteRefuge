@@ -54,3 +54,34 @@ img#logoCNDDLA {
 .card {
     margin: 1em 0;
 }
+
+.infosNotes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img.image-detail-animal {
+    width: 40em;
+}
+
+p.notes-detail-animal {
+    width: 40em;
+    padding: 2em;
+}
+
+.descriptionAnimal {
+    padding: 2em;
+}
+
+@media (max-width: 1399px) {
+    img.image-detail-animal {
+        width: 100%;
+    }
+    p.notes-detail-animal {
+        width: 100%;
+        padding: 1.5em;
+    }
+    .descriptionAnimal {
+        padding: 1.5em;
+    }
+}
