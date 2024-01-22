@@ -47,11 +47,15 @@ require('commun/header.php');
                                 };
 
                                 echo(ucfirst($infoschien));
+
+                                if ($donneeChien['adoption_sos']) {
+                                    echo('<div class="alert alert-info" role="alert">Adoption SOS !</div>');
+                                }
                                 
                                 ?>
                             </p>
                         </div>
-                        <a href="#" class="btn btn-light">Voir plus</a>
+                        <a href="./details-animal.php?id=<?=$donneeChien['id']?>" class="btn btn-light">Voir plus</a>
                     </div>
 
                 <?php } ?>
