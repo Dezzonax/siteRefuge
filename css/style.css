@@ -62,6 +62,7 @@ img#logoCNDDLA {
 
 img.image-detail-animal {
     width: 40em;
+    height: 100%;
 }
 
 p.notes-detail-animal {
@@ -71,6 +72,22 @@ p.notes-detail-animal {
 
 .descriptionAnimal {
     padding: 2em;
+}
+
+.actualite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actualite-image {
+    width: 23em;
+    height: 100%;
+}
+
+.actualite-text {
+    padding: 1.5em 2em;
+    width: 57em;
 }
 
 @media (max-width: 1399px) {

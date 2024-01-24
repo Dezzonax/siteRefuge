@@ -12,8 +12,8 @@ if (isset($_POST["submit"])) {
         $datetime = new DateTime();
 
         $date = $datetime->format('Y-m-d H:i:s');
-        $title = $_POST['article_title'];
-        $content = $_POST['article_content'];
+        $title = htmlspecialchars($_POST['article_title']);
+        $content = htmlspecialchars($_POST['article_content']);
 
         $targetDir = "medias/images/photos_actus/";
 
@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
             } else {
 
                 // Allow certain file formats        
-                $allowTypes = array('jpg','png','jpeg','gif');
+                $allowTypes = array('jpg','png','jpeg','gif','jfif');
                 if(in_array($fileType, $allowTypes)){ 
 
                     // Upload file to server 
@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
 
                 } else {
 
-                    $_SESSION["newActuMsg"] = "Seuls les fichiers .jpg, .png, .jpeg et .gif peuvent être téléversés.";
+                    $_SESSION["newActuMsg"] = "Seuls les fichiers .jpg, .png, .jpeg, .jfif et .gif peuvent être téléversés.";
 
                 };
 
@@ -93,5 +93,5 @@ if (isset($_POST["submit"])) {
 
 };
 
-header("Location: ./new-actu.php");
+header("Location: ./new-actualites.php");
 exit;

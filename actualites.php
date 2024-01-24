@@ -17,17 +17,24 @@ require('commun/header.php');
 
         <div class="container">
 
+            <h1>Actualités</h1><hr>
+
             <?php foreach ($donneesActualites as $donneesActualite) { ?>
 
+                <br>
                 <article class="actualite">
 
-                    <h2><?=$donneesActualite['title']?></h2>
                     <?php if ($donneesActualite['image_name']) {?>
-                        <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>">
+                        <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>" class="actualite-image">
                     <?php } ?>
-                    <p><?=$donneesActualite['content']?></p>
+                    <div class="actualite-text">
+                        <h3><?=$donneesActualite['title']?></h3>
+                        <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
+                        <p><?=$donneesActualite['content']?></p>
+                    </div>
                 
                 </article>
+                <br>
 
             <?php }; ?>
 

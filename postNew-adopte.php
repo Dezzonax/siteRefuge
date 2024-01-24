@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
 
     if (isset($_POST["adopte_description"]) && isset($_FILES["adopte_picture"]["name"]) && !empty($_POST["adopte_description"]) && !empty($_FILES["adopte_picture"]["name"])) {
 
-        $description = $_POST['adopte_description'];
+        $description = htmlspecialchars($_POST['adopte_description']);
 
         $targetDir = "medias/images/photos_adoptes/";
 
