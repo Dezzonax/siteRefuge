@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails de l'animal - Refuge de Reims</title>
+    <title><?=ucfirst($infosAnimal[0]['name'])?> - Refuge de Reims</title>
 
 <?php
 require('commun/header.php');
@@ -23,6 +23,8 @@ require('commun/header.php');
 
         <div class="container">
 
+        <h1><?=ucfirst($infosAnimal[0]['name'])?></h1><hr><br>
+
             <div class="infosAnimal">
 
                 <div class="infosNotes">
@@ -30,8 +32,6 @@ require('commun/header.php');
                     <img src="./medias/images/photos_animaux/<?=$infosAnimal[0]['file_name']?>" alt="photo de <?=ucfirst($infosAnimal[0]['name'])?>" class="image-detail-animal">
 
                     <p class="notes-detail-animal">
-
-                        <b><?=ucfirst($infosAnimal[0]['name'])?></b>,
 
                         <?php
                         $infosAnimalTexte = "";

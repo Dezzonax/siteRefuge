@@ -1,5 +1,5 @@
 <?php
-    require('appelChiens.php');
+require('appelChiens.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,10 @@ require('commun/header.php');
     <main>
 
         <div class="container">
+
+        <h1>Chiens</h1><hr><br>
+
+        <?php if ($donneesChiens) { ?>
 
             <div class="conteneur-de-cartes">
 
@@ -61,6 +65,8 @@ require('commun/header.php');
                 <?php } ?>
 
             </div>
+
+        <?php } else { echo("Il n'y a aucun chien disponible à l'adoption actuellement."); } ?>
 
         </div>
 

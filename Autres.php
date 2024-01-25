@@ -1,5 +1,5 @@
 <?php
-    require('appelAutres.php');
+require('appelAutres.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,10 @@ require('commun/header.php');
     <main>
 
         <div class="container">
+
+        <h1>Autres animaux de compagnie</h1><hr><br>
+
+        <?php if ($donneesAutres) { ?>
 
             <div class="conteneur-de-cartes">
 
@@ -61,6 +65,8 @@ require('commun/header.php');
                 <?php } ?>
 
             </div>
+
+        <?php } else { echo("Il n'y a aucun autre animal de compagnie disponible à l'adoption actuellement."); } ?>
 
         </div>
 

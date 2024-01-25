@@ -1,5 +1,5 @@
 <?php
-    require('appelChats.php');
+require('appelChats.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,10 @@ require('commun/header.php');
     <main>
 
         <div class="container">
+
+        <h1>Chats</h1><hr><br>
+
+        <?php if ($donneesChats) { ?>
 
             <div class="conteneur-de-cartes">
 
@@ -61,6 +65,8 @@ require('commun/header.php');
                 <?php } ?>
 
             </div>
+
+        <?php } else { echo("Il n'y a aucun chat disponible à l'adoption actuellement."); } ?>
 
         </div>
 

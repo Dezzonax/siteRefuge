@@ -26,7 +26,7 @@
             </a>
             <ul class="dropdown-menu animate slideIn">
                 <li><a class="dropdown-item" href="actualites.php">Actualités</a></li>
-                <li><a class="dropdown-item" href="#">Offres d'emplois</a></li>
+                <li><a class="dropdown-item" href="emplois.php">Offres d'emplois</a></li>
             </ul>
         </li>
 
@@ -50,7 +50,7 @@
                 Aider le refuge
             </a>
             <ul class="dropdown-menu animate slideIn">
-                <li><a class="dropdown-item" href="#">Bénévolat</a></li>
+                <li><a class="dropdown-item" href="benevolat.php">Bénévolat</a></li>
                 <li><a class="dropdown-item" href="#">Famille d'accueil</a></li>
                 <li><a class="dropdown-item" href="#">Devenir adhérent</a></li>
                 <li><a class="dropdown-item" href="#">Parrainage</a></li>
