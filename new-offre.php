@@ -14,6 +14,8 @@ require('commun/header.php');
 
         <div class="container">
 
+        <h1>Ajout d'une nouvelle offre d'emploi ou de bénévolat</h1><hr><br>
+
         <?php if (isset($_SESSION["newOffreMsg"]) && !empty($_SESSION["newOffreMsg"])) { ?>
 
         <div class="alert alert-warning" role="alert">
@@ -22,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="postNew-offre.php" method="post">
+            <form action="appelEtPost/postNew-offre.php" method="appelEtPost/post">
 
                 <div class="mb-3">
                     <label for="job_title" class="form-label">Titre de l'offre</label>

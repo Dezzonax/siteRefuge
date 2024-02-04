@@ -39,8 +39,8 @@
                 <li><a class="dropdown-item" href="chiens.php">Chiens</a></li>
                 <li><a class="dropdown-item" href="chats.php">Chats</a></li>
                 <li><a class="dropdown-item" href="autres.php">Autres</a></li>
-                <li><a class="dropdown-item" href="#">Adoptions SOS</a></li>
-                <li><a class="dropdown-item" href="#">Les adoptés</a></li>
+                <li><a class="dropdown-item" href="adoptions-sos.php">Adoptions SOS</a></li>
+                <li><a class="dropdown-item" href="adoptes.php">Les adoptés</a></li>
                 <li><a class="dropdown-item" href="#">Formation chien catégorisés</a></li>
             </ul>
         </li>

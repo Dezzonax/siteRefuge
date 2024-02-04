@@ -14,6 +14,8 @@ require('commun/header.php');
 
         <div class="container">
 
+        <h1>Ajout d'une nouvelle actualité</h1><hr><br>
+
         <?php if (isset($_SESSION["newActuMsg"]) && !empty($_SESSION["newActuMsg"])) { ?>
 
         <div class="alert alert-warning" role="alert">
@@ -22,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="postNew-actu.php" method="post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-actualite.php" method="appelEtPost/post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Titre de l'actualité</label>

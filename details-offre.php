@@ -1,5 +1,11 @@
 <?php
-require('appelDetails-offre.php');
+require('appelEtPost/appelDetails-offre.php');
+
+    if (!$infosOffre) {
+        $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
+        header("Location: ./index.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>

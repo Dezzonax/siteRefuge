@@ -1,5 +1,5 @@
 <?php
-require('appelAutres.php');
+require('appelEtPost/appelAutres.php');
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,5 @@
 <?php
-    require('appelActualites.php');
+    require('appelEtPost/appelActualites.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ require('commun/header.php');
                     <div class="actualite-text">
                         <h3><?=$donneesActualite['title']?></h3>
                         <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
-                        <p><?=$donneesActualite['content']?></p>
+                        <p><?=nl2br($donneesActualite['content'])?></p>
                     </div>
                 
                 </article>

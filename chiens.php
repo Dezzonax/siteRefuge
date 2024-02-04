@@ -1,5 +1,5 @@
 <?php
-require('appelChiens.php');
+require('appelEtPost/appelChiens.php');
 ?>
 
 <!DOCTYPE html>

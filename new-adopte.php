@@ -14,6 +14,8 @@ require('commun/header.php');
 
         <div class="container">
 
+        <h1>Ajout d'un nouvel adopté</h1><hr><br>
+
         <?php if (isset($_SESSION["newAdopteMsg"]) && !empty($_SESSION["newAdopteMsg"])) { ?>
 
         <div class="alert alert-warning" role="alert">
@@ -22,11 +24,11 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="postNew-adopte.php" method="post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-adopte.php" method="appelEtPost/post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Ajouter une image</label>
-                    <input class="form-control" type="file" id="formFile" name="adopte_picture" value="Upload" accept=".png, .jpeg, .jpg, .gif" required>
+                    <input class="form-control" type="file" id="formFile" name="adopte_picture" value="Upload" accept=".png, .jpeg, .jpg, .gif, .jfif" required>
                 </div>
 
                 <br>

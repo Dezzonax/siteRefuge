@@ -1,8 +1,8 @@
 <?php
-    require('appelDetails-animal.php');
+require('appelEtPost/appelDetails-animal.php');
 
     if (!$infosAnimal) {
-        $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'éxiste pas ou plus.";
+        $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
         header("Location: ./index.php");
         exit;
     }
@@ -89,7 +89,7 @@ require('commun/header.php');
 
                 <div class="descriptionAnimal">
 
-                    <?=$infosAnimal[0]['description']?>
+                    <?=nl2br($infosAnimal[0]['description'])?>
 
                 </div>
 

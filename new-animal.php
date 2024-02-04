@@ -14,6 +14,8 @@ require('commun/header.php');
 
         <div class="container">
 
+        <h1>Ajout d'un nouvel animal</h1><hr><br>
+
         <?php if (isset($_SESSION["newAnimalMsg"]) && !empty($_SESSION["newAnimalMsg"])) { ?>
 
         <div class="alert alert-warning" role="alert">
@@ -22,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="postNew-animal.php" method="post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-animal.php" method="appelEtPost/post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="animal_name" class="form-label">Nom de l'animal*</label>
@@ -31,7 +33,7 @@ require('commun/header.php');
 
                 <div class="mb-3">
                     <label for="animalFile" class="form-label">Photo de l'animal*</label>
-                    <input class="form-control" type="file" id="animalFile" name="animal_picture" value="Upload" accept=".png, .jpeg, .jpg, .gif" required>
+                    <input class="form-control" type="file" id="animalFile" name="animal_picture" value="Upload" accept=".png, .jpeg, .jpg, .gif, .jfif" required>
                 </div>
 
                 <div class="form-check">
