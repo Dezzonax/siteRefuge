@@ -24,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="appelEtPost/postNew-adopte.php" method="appelEtPost/post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-adopte.php" method="post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Ajouter une image</label>
@@ -34,7 +34,7 @@ require('commun/header.php');
                 <br>
                 
                 <div class="mb-3">
-                    <textarea name="adopte_description" id="adopte_description" class="form-control" rows="3" required></textarea>
+                    <textarea name="adopte_description" id="adopte_description" class="form-control" rows="5" required></textarea>
                 </div>
 
                 <input type="submit" name="submit" class="btn btn-primary">

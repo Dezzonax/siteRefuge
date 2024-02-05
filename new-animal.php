@@ -24,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="appelEtPost/postNew-animal.php" method="appelEtPost/post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-animal.php" method="post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="animal_name" class="form-label">Nom de l'animal*</label>
@@ -90,7 +90,7 @@ require('commun/header.php');
 
                 <div class="form-group">
                     <label for="animal_description">Description de l'animal*</label>
-                    <textarea class="form-control" name="animal_description" id="animal_description" rows="3" required></textarea>
+                    <textarea class="form-control" name="animal_description" id="animal_description" rows="5" required></textarea>
                 </div>
 
                 <br>

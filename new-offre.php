@@ -24,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="appelEtPost/postNew-offre.php" method="appelEtPost/post">
+            <form action="appelEtPost/postNew-offre.php" method="post">
 
                 <div class="mb-3">
                     <label for="job_title" class="form-label">Titre de l'offre</label>
@@ -33,7 +33,7 @@ require('commun/header.php');
 
                 <div class="form-group">
                     <label for="job_description">Description de l'offre</label>
-                    <textarea class="form-control" name="job_description" id="job_description" rows="3" required></textarea>
+                    <textarea class="form-control" name="job_description" id="job_description" rows="5" required></textarea>
                 </div>
 
                 <br>

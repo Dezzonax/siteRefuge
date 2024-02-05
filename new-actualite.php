@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editeur d'actualités - Refuge de Reims</title>
+    <title>Ajout d'une nouvelle actualité - Refuge de Reims</title>
 
 <?php 
 session_start();
@@ -24,7 +24,7 @@ require('commun/header.php');
 
         <?php }; ?>
 
-            <form action="appelEtPost/postNew-actualite.php" method="appelEtPost/post" enctype="multipart/form-data">
+            <form action="appelEtPost/postNew-actualite.php" method="post" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Titre de l'actualité</label>
@@ -39,7 +39,7 @@ require('commun/header.php');
                 <br>
                 
                 <div class="mb-3">
-                    <textarea name="article_content" id="article_content" class="form-control" rows="3" required></textarea>
+                    <textarea name="article_content" id="article_content" class="form-control" rows="5" required></textarea>
                 </div>
 
                 <input type="submit" name="submit" class="btn btn-primary">

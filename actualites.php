@@ -31,8 +31,11 @@ require('commun/header.php');
                         
                         <div class="actualite-text">
                             <h3><?=$donneesActualite['title']?></h3>
-                            <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
+                            <p class="actualite-date"><?=$donneesActualite['creation_date']?> - <?=$donneesActualite['edit_date']?></p>
                             <p><?=nl2br($donneesActualite['content'])?></p>
+
+                            <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
+
                         </div>
                     
                     </article>
@@ -42,9 +45,12 @@ require('commun/header.php');
                     <article class="actualite-sans-image">
 
                         <div class="actualite-text">
-                        <h3><?=$donneesActualite['title']?></h3>
-                        <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
-                        <p><?=nl2br($donneesActualite['content'])?></p>
+                            <h3><?=$donneesActualite['title']?></h3>
+                            <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
+                            <p><?=nl2br($donneesActualite['content'])?></p>
+
+                            <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
+
                         </div>
 
                     </article>
