@@ -33,7 +33,7 @@ require('commun/header.php');
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Ajouter une image</label>
-                    <input class="form-control" type="file" id="formFile" name="article_picture" value="Upload" accept=".png, .jpeg, .jpg, .gif, .jfif">
+                    <input class="form-control" type="file" id="formFile" name="article_picture" value="Upload" accept=".png, .jpeg, .jpg, .jfif">
                 </div>
 
                 <br>

@@ -81,7 +81,7 @@ if (isset($_POST["submit"])) {
         } else {
 
             // Allow certain file formats        
-            $allowTypes = array('jpg','png','jpeg','gif','jfif');
+            $allowTypes = array('jpg','png','jpeg','jfif');
             if(in_array($fileType, $allowTypes)){ 
 
                 // Upload file to server 
@@ -114,7 +114,7 @@ if (isset($_POST["submit"])) {
 
             } else {
 
-                $_SESSION["newAnimalMsg"] = "Seuls les fichiers .jpg, .png, .jpeg, .gif et .jfif peuvent être téléversés.";
+                $_SESSION["newAnimalMsg"] = "Seuls les fichiers .jpg, .png, .jpeg et .jfif peuvent être téléversés.";
 
             };
 

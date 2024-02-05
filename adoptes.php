@@ -38,7 +38,7 @@ require('commun/header.php');
 
             </div>
 
-        <?php } else { echo("Il n'y a aucun autre animal de compagnie disponible à l'adoption actuellement."); } ?>
+        <?php } else { echo("Il n'y a rien ici pour le moment."); } ?>
 
         </div>
 

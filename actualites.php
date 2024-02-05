@@ -22,18 +22,35 @@ require('commun/header.php');
             <?php foreach ($donneesActualites as $donneesActualite) { ?>
 
                 <br>
-                <article class="actualite">
 
-                    <?php if ($donneesActualite['image_name']) {?>
-                        <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>" class="actualite-image">
-                    <?php } ?>
-                    <div class="actualite-text">
+                <?php if ($donneesActualite['image_name']) {?>
+
+                    <article class="actualite">
+
+                            <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>" class="actualite-image">
+                        
+                        <div class="actualite-text">
+                            <h3><?=$donneesActualite['title']?></h3>
+                            <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
+                            <p><?=nl2br($donneesActualite['content'])?></p>
+                        </div>
+                    
+                    </article>
+
+                <?php } else { ?>
+
+                    <article class="actualite-sans-image">
+
+                        <div class="actualite-text">
                         <h3><?=$donneesActualite['title']?></h3>
                         <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
                         <p><?=nl2br($donneesActualite['content'])?></p>
-                    </div>
-                
-                </article>
+                        </div>
+
+                    </article>
+
+                <?php } ?>
+
                 <br>
 
             <?php }; ?>
