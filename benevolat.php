@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelBenevolat.php');
+session_start();
+
+require('bdconnect.php');
+
+$benevolats = $bdd->query("SELECT jobs.id, jobs.titre FROM jobs WHERE jobs.type_offre = 2");
+
+$donneesBenevolats = $benevolats->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +15,7 @@ require('appelEtPost/appelBenevolat.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offres d'emploi - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
 
 <main>
 
@@ -38,6 +42,4 @@ require('commun/header.php');
 
 </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>

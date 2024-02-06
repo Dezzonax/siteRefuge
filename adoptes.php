@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelAdoptes.php');
+session_start();
+
+require('bdconnect.php');
+
+$adoptes = $bdd->query("SELECT * FROM adoptes");
+
+$donneesAdoptes = $adoptes->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +15,7 @@ require('appelEtPost/appelAdoptes.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les adoptés - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -44,6 +48,4 @@ require('commun/header.php');
 
     </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>

@@ -1,5 +1,11 @@
 <?php
-    require('appelEtPost/appelActualites.php');
+session_start();
+
+require('bdconnect.php');
+
+$actualites = $bdd->query("SELECT actualites.id, actualites.title, actualites.image_name, actualites.content, actualites.creation_date, actualites.edit_date FROM actualites");
+
+$donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -65,6 +69,4 @@ require('commun/header.php');
 
     </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>

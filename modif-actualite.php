@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelModif-actualite.php');
+session_start();
+
+require('bdconnect.php');
+
+$actualite = $bdd->query("SELECT actualites.id, actualites.title, actualites.content FROM actualites WHERE actualites.id = {$_GET['id']}");
+
+$donneesActualite = $actualite->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +15,7 @@ require('appelEtPost/appelModif-actualite.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier une actualité - Refuge de Reims</title>
 
-<?php 
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 

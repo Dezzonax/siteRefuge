@@ -1,11 +1,18 @@
 <?php
-require('appelPostModif-actualite.php');
+session_start();
 
 if (isset($_POST["submit"])) {
 
     $_SESSION["modifActuMsg"] = "";
 
     if (isset($_POST["article_title"]) && isset($_POST["article_content"]) && !empty($_POST["article_title"]) && !empty($_POST["article_content"])) {
+
+        $bdd = new PDO('mysql:host=localhost; dbname=refuge; charset=utf8;', 'root', NULL);
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $actualite = $bdd->query("SELECT actualites.id, actualites.title, actualites.content FROM actualites WHERE actualites.id = {$_POST["submit"]}");
+
+        $donneesActualite = $actualite->fetchall(PDO::FETCH_ASSOC);
 
         if ($_POST["article_title"] != $donneesActualite[0]['title'] || $_POST["article_content"] != $donneesActualite[0]['content']) {
 
@@ -15,9 +22,6 @@ if (isset($_POST["submit"])) {
             $date = $datetime->format('Y-m-d H:i:s');
             $title = htmlspecialchars($_POST['article_title']);
             $content = htmlspecialchars($_POST['article_content']);
-    
-            $bdd = new PDO('mysql:host=localhost; dbname=refuge; charset=utf8;', 'root', NULL);
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt= "UPDATE actualites SET title = '$title', content = '$content', edit_date = '$date' WHERE actualites.id = '{$donneesActualite[0]['id']}'";
             $requete = $bdd->query($stmt);

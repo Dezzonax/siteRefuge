@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelAutres.php');
+session_start();
+
+require('bdconnect.php');
+
+$autres = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.mfi, animals.file_name, animals.birthdate, animals.adoption_sos FROM animals WHERE animals.animal_type != 'chien' AND animals.animal_type != 'chat'");
+
+$donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +15,7 @@ require('appelEtPost/appelAutres.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autres animaux de compagnie - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -72,6 +76,4 @@ require('commun/header.php');
 
     </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>

@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST["submit"])) {
 
     session_start();
@@ -69,7 +68,7 @@ if (isset($_POST["submit"])) {
                         $_SESSION["newActuMsg"] = "L'image n'a pas pu être téléversée.";
 
                     };
-
+                
                 } else {
 
                     $_SESSION["newActuMsg"] = "Seuls les fichiers .jpg, .png, .jpeg et .jfif peuvent être téléversés.";
@@ -87,11 +86,8 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-
     header("Location: ./index.php");
     exit;
-
 };
-
 header("Location: ./new-actualites.php");
 exit;

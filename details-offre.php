@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelDetails-offre.php');
+session_start();
+
+require('bdconnect.php');
+
+$infos = $bdd->query("SELECT * FROM jobs WHERE jobs.id = {$_GET['id']}");
+
+$infosOffre = $infos->fetchall(PDO::FETCH_ASSOC);
 
     if (!$infosOffre) {
         $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
@@ -15,9 +21,7 @@ require('appelEtPost/appelDetails-offre.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=ucfirst($infosOffre[0]['titre'])?> - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
 
 <main>
 
@@ -33,6 +37,4 @@ require('commun/header.php');
 
 </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>

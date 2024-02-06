@@ -1,5 +1,11 @@
 <?php
-require('appelEtPost/appelDetails-animal.php');
+session_start();
+
+require('bdconnect.php');
+
+$infos = $bdd->query("SELECT * FROM animals WHERE animals.id = {$_GET['id']}");
+
+$infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
     if (!$infosAnimal) {
         $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
@@ -15,9 +21,7 @@ require('appelEtPost/appelDetails-animal.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=ucfirst($infosAnimal[0]['name'])?> - Refuge de Reims</title>
 
-<?php
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -99,6 +103,4 @@ require('commun/header.php');
 
     </main>
 
-<?php
-require('commun/footer.php');
-?>
+<?php require('commun/footer.php'); ?>
