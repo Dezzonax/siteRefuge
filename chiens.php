@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('bdconnect.php');
+require('appelEtPost/dbconnect.php');
 
 $chiens = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.mfi, animals.file_name, animals.birthdate, animals.adoption_sos FROM animals WHERE animals.animal_type = 'chien'");
 

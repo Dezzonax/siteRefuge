@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('bdconnect.php');
+require('appelEtPost/dbconnect.php');
 
 $emplois = $bdd->query("SELECT jobs.id, jobs.titre FROM jobs WHERE jobs.type_offre = 1");
 

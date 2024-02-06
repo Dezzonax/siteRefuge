@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('bdconnect.php');
+require('appelEtPost/dbconnect.php');
 
 $benevolats = $bdd->query("SELECT jobs.id, jobs.titre FROM jobs WHERE jobs.type_offre = 2");
 

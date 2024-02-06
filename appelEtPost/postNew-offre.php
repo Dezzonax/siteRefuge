@@ -11,8 +11,7 @@ if (isset($_POST["submit"])) {
         $description = htmlspecialchars($_POST['job_description']);
         $type = htmlspecialchars($_POST['job_type']);
 
-        $bdd = new PDO('mysql:host=localhost; dbname=refuge; charset=utf8;', 'root', NULL);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require('dbconnect.php');
 
         $stmt= 'INSERT INTO jobs(jobs.titre, jobs.description, jobs.type_offre) VALUES ("'.$title.'","'.$description.'","'.$type.'")';
         $requete = $bdd->query($stmt);

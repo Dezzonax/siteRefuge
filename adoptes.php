@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('bdconnect.php');
+require('appelEtPost/dbconnect.php');
 
 $adoptes = $bdd->query("SELECT * FROM adoptes");
 

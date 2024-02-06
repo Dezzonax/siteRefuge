@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('bdconnect.php');
+require('appelEtPost/dbconnect.php');
 
 $infos = $bdd->query("SELECT * FROM jobs WHERE jobs.id = {$_GET['id']}");
 

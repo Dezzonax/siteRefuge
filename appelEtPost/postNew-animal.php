@@ -63,8 +63,7 @@ if (isset($_POST["submit"])) {
 
         $targetDir = "medias/images/photos_animaux/";
 
-        $bdd = new PDO('mysql:host=localhost; dbname=refuge; charset=utf8;', 'root', NULL);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require('dbconnect.php');
 
         $imageName = basename($_FILES["animal_picture"]["name"]);
         $targetFilePath = $targetDir . $imageName;

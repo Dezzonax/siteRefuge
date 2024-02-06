@@ -15,8 +15,7 @@ if (isset($_POST["submit"])) {
         $targetFilePath = $targetDir . $imageName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-        $bdd = new PDO('mysql:host=localhost; dbname=refuge; charset=utf8;', 'root', NULL);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require('dbconnect.php');
 
         // Vérifier s'il n'y a pas déjà une image avec ce nom
         $nomsImages = $bdd->query("SELECT adoptes.file_name FROM adoptes WHERE adoptes.file_name = '$imageName'");
