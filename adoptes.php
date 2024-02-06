@@ -35,6 +35,9 @@ $donneesAdoptes = $adoptes->fetchall(PDO::FETCH_ASSOC);
                             <p class="card-text">
                                 <?=nl2br($donneeAdopte['description'])?>
                             </p>
+
+                            <a href="./modif-adopte.php?id=<?=$donneeAdopte['id']?>" class="btn btn-primary">Modifier</a>
+
                         </div>
                     </div>
 

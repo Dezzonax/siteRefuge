@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
             $title = htmlspecialchars($_POST['article_title']);
             $content = htmlspecialchars($_POST['article_content']);
 
-            $stmt= "UPDATE actualites SET title = '$title', content = '$content', edit_date = '$date' WHERE actualites.id = '{$donneesActualite[0]['id']}'";
+            $stmt= "UPDATE actualites SET actualites.title = '$title', actualites.content = '$content', actualites.edit_date = '$date' WHERE actualites.id = '{$_POST["submit"]}'";
             $requete = $bdd->query($stmt);
 
             $_SESSION["modifActuMsg"] = "L'actualité a bien été modifiée.";

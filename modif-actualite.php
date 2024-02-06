@@ -44,7 +44,7 @@ $donneesActualite = $actualite->fetchall(PDO::FETCH_ASSOC);
                     <textarea name="article_content" id="article_content" class="form-control" rows="5" required><?=$donneesActualite[0]['content']?></textarea>
                 </div>
 
-                <input type="submit" name="submit" class="btn btn-primary" value="<?=$donneesActualite[0]['id']?>">
+                <button type="submit" name="submit" class="btn btn-primary" value="<?=$donneesActualite[0]['id']?>">Modifier l'actualité</button>
 
             </form>
 

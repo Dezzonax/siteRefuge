@@ -29,11 +29,10 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
 
                 <?php if ($donneesActualite['image_name']) {?>
 
-                    <article class="actualite">
-
-                            <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>" class="actualite-image">
+                    <article class="actualite-avec-image">
                         
                         <div class="actualite-text">
+
                             <h3><?=$donneesActualite['title']?></h3>
                             <p class="actualite-date"><?=$donneesActualite['creation_date']?> - <?=$donneesActualite['edit_date']?></p>
                             <p><?=nl2br($donneesActualite['content'])?></p>
@@ -41,16 +40,20 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
                             <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
 
                         </div>
-                    
+
+                        <img src="medias/images/photos_actus/<?=$donneesActualite['image_name']?>" alt="<?=$donneesActualite['title']?>" class="actualite-image">
+
+
                     </article>
 
-                <?php } else { ?>
+                <?php } else {?>
 
                     <article class="actualite-sans-image">
-
+                        
                         <div class="actualite-text">
+
                             <h3><?=$donneesActualite['title']?></h3>
-                            <p class="actualite-date"><?=$donneesActualite['creation_date']?></p>
+                            <p class="actualite-date"><?=$donneesActualite['creation_date']?> - <?=$donneesActualite['edit_date']?></p>
                             <p><?=nl2br($donneesActualite['content'])?></p>
 
                             <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
@@ -61,9 +64,9 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
 
                 <?php } ?>
 
-                <br>
+            <?php } ?>
 
-            <?php }; ?>
+            <br>
 
         </div>
 
