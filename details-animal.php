@@ -99,6 +99,8 @@ $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
             </div>
 
+            <a href="./modif-animal.php?id=<?=$infosAnimal[0]['id']?>" class="btn btn-primary">Modifier</a>
+
         </div>
 
     </main>
