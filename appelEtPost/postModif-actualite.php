@@ -5,11 +5,11 @@ if (isset($_POST["submit"])) {
 
     $_SESSION["modifActuMsg"] = "";
 
-    if (isset($_POST["article_title"]) && isset($_POST["article_content"]) && !empty($_POST["article_title"]) && !empty($_POST["article_content"])) {
+    if (isset($_POST["article_title"]) && isset($_POST["article_content"]) && !empty($_POST["article_title"]) && !empty($_POST["article_content"]) && isset($_POST["submit"]) && !empty($_POST["submit"])) {
 
         require('dbconnect.php');
 
-        $actualite = $bdd->query("SELECT actualites.id, actualites.title, actualites.content FROM actualites WHERE actualites.id = {$_POST["submit"]}");
+        $actualite = $bdd->query("SELECT actualites.title, actualites.content FROM actualites WHERE actualites.id = {$_POST["submit"]}");
 
         $donneesActualite = $actualite->fetchall(PDO::FETCH_ASSOC);
 
@@ -42,5 +42,5 @@ if (isset($_POST["submit"])) {
 
 };
 
-header("Location: ../modif-actualite.php?id=".$donneesActualite[0]['id']);
+header("Location: ../modif-actualite.php?id=".$_POST["submit"]);
 exit;

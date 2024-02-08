@@ -5,11 +5,11 @@ if (isset($_POST["submit"])) {
 
     $_SESSION["modifAdopteMsg"] = "";
 
-    if (isset($_POST["adopte_description"]) && !empty($_POST["adopte_description"])) {
+    if (isset($_POST["adopte_description"]) && !empty($_POST["adopte_description"]) && isset($_POST["submit"]) && !empty($_POST["submit"])) {
 
         require('dbconnect.php');
 
-        $adopte = $bdd->query("SELECT adoptes.id, adoptes.description FROM adoptes WHERE adoptes.id = {$_POST["submit"]}");
+        $adopte = $bdd->query("SELECT adoptes.description FROM adoptes WHERE adoptes.id = {$_POST["submit"]}");
 
         $donneesAdopte = $adopte->fetchall(PDO::FETCH_ASSOC);
 
@@ -34,5 +34,5 @@ if (isset($_POST["submit"])) {
     header("Location: ./index.php");
     exit;
 };
-header("Location: ../modif-adopte.php?id=".$donneesAdopte[0]['id']);
+header("Location: ../modif-adopte.php?id=".$_POST["submit"]);
 exit;

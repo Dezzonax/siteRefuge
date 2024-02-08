@@ -31,6 +31,8 @@ $infosOffre = $infos->fetchall(PDO::FETCH_ASSOC);
 
     <p><?=nl2br($infosOffre[0]['description'])?></p>
 
+    <a href="./modif-offre.php?id=<?=$_GET['id']?>" class="btn btn-primary">Modifier</a>
+
     <br>
 
     </div>

@@ -13,7 +13,7 @@ $donneesAdopte = $adopte->fetchall(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier un adopté - Refuge de Reims</title>
+    <title>Modifier la description d'un adopté - Refuge de Reims</title>
 
 <?php require('commun/header.php'); ?>
     
@@ -21,7 +21,7 @@ $donneesAdopte = $adopte->fetchall(PDO::FETCH_ASSOC);
 
         <div class="container">
 
-        <h1>Modifier un adopté</h1><hr><br>
+        <h1>Modifier la description d'un adopté</h1><hr><br>
 
         <?php if (isset($_SESSION["modifAdopteMsg"]) && !empty($_SESSION["modifAdopteMsg"])) { ?>
 
