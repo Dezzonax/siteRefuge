@@ -61,7 +61,7 @@ if (isset($_POST["submit"])) {
             $stmtPart2 = $stmtPart2.',"'.$animal_sos.'"';
         };
 
-        $targetDir = "medias/images/photos_animaux/";
+        $targetDir = "../medias/images/photos_animaux/";
 
         require('dbconnect.php');
 
@@ -125,8 +125,8 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-    header("Location: ./index.php");
+    header("Location: ../index.php");
     exit;
 };
-header("Location: ./new-animal.php");
+header("Location: ../new-animal.php");
 exit;

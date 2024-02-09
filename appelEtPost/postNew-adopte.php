@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
 
         $description = htmlspecialchars($_POST['adopte_description']);
 
-        $targetDir = "medias/images/photos_adoptes/";
+        $targetDir = "../medias/images/photos_adoptes/";
 
         $imageName = basename($_FILES["adopte_picture"]["name"]);
         $targetFilePath = $targetDir . $imageName;
@@ -70,8 +70,8 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-    header("Location: ./index.php");
+    header("Location: ../index.php");
     exit;
 };
-header("Location: ./new-adopte.php");
+header("Location: ../new-adopte.php");
 exit;

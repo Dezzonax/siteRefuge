@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-    header("Location: ./index.php");
+    header("Location: ../index.php");
     exit;
 };
 header("Location: ../modif-offre.php?id=".$_POST["submit"]);

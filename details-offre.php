@@ -32,6 +32,7 @@ $infosOffre = $infos->fetchall(PDO::FETCH_ASSOC);
     <p><?=nl2br($infosOffre[0]['description'])?></p>
 
     <a href="./modif-offre.php?id=<?=$_GET['id']?>" class="btn btn-primary">Modifier</a>
+    <a href="./appelEtPost/supprOffre.php?id=<?=$_GET['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</a>
 
     <br>
 

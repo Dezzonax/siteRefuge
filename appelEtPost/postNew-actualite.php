@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         $title = htmlspecialchars($_POST['article_title']);
         $content = htmlspecialchars($_POST['article_content']);
 
-        $targetDir = "medias/images/photos_actus/";
+        $targetDir = "../medias/images/photos_actus/";
 
         require('dbconnect.php');
 
@@ -85,8 +85,8 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-    header("Location: ./index.php");
+    header("Location: ../index.php");
     exit;
 };
-header("Location: ./new-actualites.php");
+header("Location: ../new-actualite.php");
 exit;

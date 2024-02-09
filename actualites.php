@@ -38,6 +38,7 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
                             <p><?=nl2br($donneesActualite['content'])?></p>
 
                             <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
+                            <a href="./appelEtPost/supprActualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette actualité ?')">Supprimer</a>
 
                         </div>
 
@@ -57,6 +58,8 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
                             <p><?=nl2br($donneesActualite['content'])?></p>
 
                             <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
+                            <a href="./appelEtPost/supprActualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette actualité ?')">Supprimer</a>
+
 
                         </div>
 

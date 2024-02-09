@@ -37,6 +37,7 @@ $donneesAdoptes = $adoptes->fetchall(PDO::FETCH_ASSOC);
                             </p>
 
                             <a href="./modif-adopte.php?id=<?=$donneeAdopte['id']?>" class="btn btn-primary">Modifier</a>
+                            <a href="./appelEtPost/supprAdopte.php?id=<?=$donneeAdopte['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet adopté ?')">Supprimer</a>
 
                         </div>
                     </div>

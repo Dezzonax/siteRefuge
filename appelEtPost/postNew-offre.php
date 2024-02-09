@@ -25,8 +25,8 @@ if (isset($_POST["submit"])) {
     }
 
 } else {
-    header("Location: ./index.php");
+    header("Location: ../index.php");
     exit;
 };
-header("Location: ./new-offre.php");
+header("Location: ../new-offre.php");
 exit;
