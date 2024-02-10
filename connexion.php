@@ -32,7 +32,7 @@ session_start()
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Mot de passe</label>
-                    <input type="text" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control" required>
                 </div>
 
                 <input type="submit" name="submit" class="btn btn-primary">

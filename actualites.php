@@ -3,7 +3,7 @@ session_start();
 
 require('appelEtPost/dbconnect.php');
 
-$actualites = $bdd->query("SELECT actualites.id, actualites.title, actualites.image_name, actualites.content, actualites.creation_date, actualites.edit_date FROM actualites");
+$actualites = $bdd->query("SELECT actualites.id, actualites.title, actualites.image_name, actualites.content, actualites.creation_date, actualites.edit_date FROM actualites ORDER BY actualites.creation_date DESC");
 
 $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
 ?>

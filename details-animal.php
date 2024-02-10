@@ -67,7 +67,7 @@ $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
                         };
 
                         if (isset($infosAnimal[0]['enfants'])) {
-                            echo("<br><br>Enfants: ".$infosAnimal[0]['enfants']);
+                            echo("<br><br>Jeunes enfants: ".$infosAnimal[0]['enfants']);
                         };
 
                         if (isset($infosAnimal[0]['chiens'])) {

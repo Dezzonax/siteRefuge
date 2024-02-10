@@ -34,7 +34,7 @@ $donneesAnimal = $animal->fetchall(PDO::FETCH_ASSOC);
             <form action="appelEtPost/postModif-animal.php" method="post">
 
                 <div class="mb-3">
-                    <label for="animal_name" class="form-label">Nom de l'animal*</label>
+                    <label for="animal_name" class="form-label">Nom de l'animal* :</label>
                     <input type="text" name="animal_name" id="animal_name" class="form-control" value="<?=$donneesAnimal[0]["name"]?>" required>
                 </div>
 
@@ -60,7 +60,7 @@ $donneesAnimal = $animal->fetchall(PDO::FETCH_ASSOC);
                 <br>
 
                 <div class="mb-3">
-                    <label for="animal_race" class="form-label">Race de l'animal</label>
+                    <label for="animal_race" class="form-label">Race de l'animal :</label>
                     <input type="text" name="animal_race" id="animal_race" class="form-control" <?php if ($donneesAnimal[0]["animal_race"]) {echo('value="'.$donneesAnimal[0]["animal_race"].'"');} ?>>
                 </div>
 
@@ -86,44 +86,44 @@ $donneesAnimal = $animal->fetchall(PDO::FETCH_ASSOC);
                 <br>
 
                 <div class="mb-3">
-                    <label for="animal_birthdate" class="form-label">Date de naissance de l'animal</label>
+                    <label for="animal_birthdate" class="form-label">Date de naissance de l'animal :</label>
                     <input type="date" name="animal_birthdate" id="animal_birthdate" class="form-control" <?php if ($donneesAnimal[0]["birthdate"]) {echo('value="'.$donneesAnimal[0]["birthdate"].'"');} ?>>
                 </div>
 
                 <div class="form-group">
-                    <label for="animal_description">Description de l'animal*</label>
+                    <label for="animal_description">Description de l'animal* :</label>
                     <textarea class="form-control" name="animal_description" id="animal_description" rows="5" required><?= $donneesAnimal[0]["description"] ?></textarea>
                 </div>
 
                 <br>
 
                 <div class="mb-3">
-                    <label for="animal_maison" class="form-label">Maison</label>
+                    <label for="animal_maison" class="form-label">Maison :</label>
                     <input type="text" name="animal_maison" id="animal_maison" class="form-control" <?php if ($donneesAnimal[0]["maison"]) {echo('value="'.$donneesAnimal[0]["maison"].'"');} ?>>
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_appartement" class="form-label">Appartement</label>
+                    <label for="animal_appartement" class="form-label">Appartement :</label>
                     <input type="text" name="animal_appartement" id="animal_appartement" class="form-control" <?php if ($donneesAnimal[0]["appartement"]) {echo('value="'.$donneesAnimal[0]["appartement"].'"');} ?>>
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_enfants" class="form-label">Enfants</label>
+                    <label for="animal_enfants" class="form-label">Jeunes enfants :</label>
                     <input type="text" name="animal_enfants" id="animal_enfants" class="form-control" <?php if ($donneesAnimal[0]["enfants"]) {echo('value="'.$donneesAnimal[0]["enfants"].'"');} ?>>
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_chiens" class="form-label">Chiens</label>
+                    <label for="animal_chiens" class="form-label">Chiens :</label>
                     <input type="text" name="animal_chiens" id="animal_chiens" class="form-control" <?php if ($donneesAnimal[0]["chiens"]) {echo('value="'.$donneesAnimal[0]["chiens"].'"');} ?>>
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_chats" class="form-label">Chats</label>
+                    <label for="animal_chats" class="form-label">Chats :</label>
                     <input type="text" name="animal_chats" id="animal_chats" class="form-control" <?php if ($donneesAnimal[0]["chats"]) {echo('value="'.$donneesAnimal[0]["chats"].'"');} ?>>
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_categorie" class="form-label">Catégorie</label>
+                    <label for="animal_categorie" class="form-label">Catégorie :</label>
                     <input type="text" name="animal_categorie" id="animal_categorie" class="form-control"  <?php if ($donneesAnimal[0]["categorie"]) {echo('value="'.$donneesAnimal[0]["categorie"].'"');} ?>>
                 </div>
 

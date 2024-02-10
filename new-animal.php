@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="animal_enfants" class="form-label">Enfants :</label>
+                    <label for="animal_enfants" class="form-label">Jeunes enfants :</label>
                     <input type="text" name="animal_enfants" id="animal_enfants" class="form-control">
                 </div>
 

@@ -34,7 +34,7 @@ $donneesActualite = $actualite->fetchall(PDO::FETCH_ASSOC);
             <form action="appelEtPost/postModif-actualite.php" method="post" enctype="multipart/form-data">
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Titre de l'actualité</label>
+                    <label for="title" class="form-label">Titre de l'actualité :</label>
                     <input type="text" name="article_title" id="title" class="form-control" value="<?=$donneesActualite[0]['title']?>" required>
                 </div>
                 
