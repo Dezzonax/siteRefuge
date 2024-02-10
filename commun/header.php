@@ -82,6 +82,10 @@
           </a>
         </li>
 
+        <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<li class="nav-item">
+          <a href="appelEtPost/postDeconnexion.php" class="btn btn-outline-danger">Déconnexion</a>
+        </li>');}?>
+
       </ul>
     </div>
   </div>

@@ -8,8 +8,8 @@ $infos = $bdd->query("SELECT * FROM jobs WHERE jobs.id = {$_GET['id']}");
 $infosOffre = $infos->fetchall(PDO::FETCH_ASSOC);
 
     if (!$infosOffre) {
-        $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
-        header("Location: ./index.php");
+        $_SESSION["msgIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
+        header("Location: index.php");
         exit;
     }
 ?>
@@ -31,8 +31,8 @@ $infosOffre = $infos->fetchall(PDO::FETCH_ASSOC);
 
     <p><?=nl2br($infosOffre[0]['description'])?></p>
 
-    <a href="./modif-offre.php?id=<?=$_GET['id']?>" class="btn btn-primary">Modifier</a>
-    <a href="./appelEtPost/supprOffre.php?id=<?=$_GET['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</a>
+    <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<a href="modif-offre.php?id=<'.$_GET['id'].'" class="btn btn-primary">Modifier</a>
+    <a href="appelEtPost/supprOffre.php?id='.$_GET['id'].'" class="btn btn-danger" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer cette annonce ?\')">Supprimer</a>');}?>
 
     <br>
 

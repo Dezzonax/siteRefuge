@@ -1,6 +1,4 @@
-<?php
-session_start()
-?>
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +13,13 @@ session_start()
 
         <div class="container">
 
-        <?php if (isset($_SESSION["msgErreurIndex"])) { ?>
+        <?php if (isset($_SESSION["msgIndex"]) && !empty($_SESSION["msgIndex"])) { ?>
 
-            <div class="alert alert-warning" role="alert"><?=$_SESSION["msgErreurIndex"]?></div>
+            <div class="alert alert-warning" role="alert"><?=$_SESSION["msgIndex"]?></div>
 
         <?php } ?>
 
-
+            <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") echo('connecté');?>
 
         </div>
 
@@ -29,5 +27,6 @@ session_start()
 
 <?php 
 require('commun/footer.php');
-if (isset($_SESSION["msgErreurIndex"])) { unset($_SESSION["msgErreurIndex"]); }
+if (isset($_SESSION["msgIndex"])) { unset($_SESSION["msgIndex"]); }
+if (isset($_SESSION["msgConnexion"])) { unset($_SESSION["msgConnexion"]); }
 ?>

@@ -21,7 +21,7 @@ $donneesAdoptes = $adoptes->fetchall(PDO::FETCH_ASSOC);
 
         <div class="container">
 
-        <h1>Les adoptés</h1><hr><br>
+        <h1>Les adoptés<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-adopte.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr><br>
 
         <?php if ($donneesAdoptes) { ?>
 
@@ -30,14 +30,14 @@ $donneesAdoptes = $adoptes->fetchall(PDO::FETCH_ASSOC);
                 <?php foreach ($donneesAdoptes as $donneeAdopte) { ?>
 
                     <div class="card" style="width: 25rem;">
-                        <img src="./medias/images/photos_adoptes/<?=$donneeAdopte['file_name']?>" class="card-img-top" alt="photo <?=$donneeAdopte['file_name']?>">
+                        <img src="medias/images/photos_adoptes/<?=$donneeAdopte['file_name']?>" class="card-img-top" alt="photo <?=$donneeAdopte['file_name']?>">
                         <div class="card-body">
                             <p class="card-text">
                                 <?=nl2br($donneeAdopte['description'])?>
                             </p>
 
-                            <a href="./modif-adopte.php?id=<?=$donneeAdopte['id']?>" class="btn btn-primary">Modifier</a>
-                            <a href="./appelEtPost/supprAdopte.php?id=<?=$donneeAdopte['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet adopté ?')">Supprimer</a>
+                            <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<a href="modif-adopte.php?id='.$donneeAdopte['id'].'" class="btn btn-primary">Modifier</a>
+                            <a href="appelEtPost/supprAdopte.php?id='.$donneeAdopte['id'].'" class="btn btn-danger" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer cet adopté ?\')">Supprimer</a>');}?>
 
                         </div>
                     </div>

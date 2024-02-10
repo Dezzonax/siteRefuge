@@ -21,7 +21,7 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
 
         <div class="container">
 
-            <h1>Actualités</h1><hr>
+            <h1>Actualités<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-actualite.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr>
 
             <?php foreach ($donneesActualites as $donneesActualite) { ?>
 
@@ -37,8 +37,8 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
                             <p class="actualite-date"><?=$donneesActualite['creation_date']?> - <?=$donneesActualite['edit_date']?></p>
                             <p><?=nl2br($donneesActualite['content'])?></p>
 
-                            <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
-                            <a href="./appelEtPost/supprActualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette actualité ?')">Supprimer</a>
+                            <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<a href="modif-actualite.php?id='.$donneesActualite['id'].'" class="btn btn-primary">Modifier</a>
+                            <a href="appelEtPost/supprActualite.php?id='.$donneesActualite['id'].'" class="btn btn-danger" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer cette actualité ?\')">Supprimer</a>');}?>
 
                         </div>
 
@@ -57,8 +57,8 @@ $donneesActualites = $actualites->fetchall(PDO::FETCH_ASSOC);
                             <p class="actualite-date"><?=$donneesActualite['creation_date']?> - <?=$donneesActualite['edit_date']?></p>
                             <p><?=nl2br($donneesActualite['content'])?></p>
 
-                            <a href="./modif-actualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-primary">Modifier</a>
-                            <a href="./appelEtPost/supprActualite.php?id=<?=$donneesActualite['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette actualité ?')">Supprimer</a>
+                            <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<a href="modif-actualite.php?id='.$donneesActualite['id'].'" class="btn btn-primary">Modifier</a>
+                            <a href="appelEtPost/supprActualite.php?id='.$donneesActualite['id'].'" class="btn btn-danger" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer cette actualité ?\')">Supprimer</a>');}?>
 
 
                         </div>

@@ -8,8 +8,8 @@ $infos = $bdd->query("SELECT * FROM animals WHERE animals.id = {$_GET['id']}");
 $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
     if (!$infosAnimal) {
-        $_SESSION["msgErreurIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
-        header("Location: ./index.php");
+        $_SESSION["msgIndex"] = "La page à laquelle vous essayez d'accéder n'existe pas ou plus.";
+        header("Location: index.php");
         exit;
     }
 ?>
@@ -33,7 +33,7 @@ $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
                 <div class="infosNotes">
 
-                    <img src="./medias/images/photos_animaux/<?=$infosAnimal[0]['file_name']?>" alt="photo de <?=ucfirst($infosAnimal[0]['name'])?>" class="image-detail-animal">
+                    <img src="medias/images/photos_animaux/<?=$infosAnimal[0]['file_name']?>" alt="photo de <?=ucfirst($infosAnimal[0]['name'])?>" class="image-detail-animal">
 
                     <p class="notes-detail-animal">
 
@@ -99,8 +99,8 @@ $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
             </div>
 
-            <a href="./modif-animal.php?id=<?=$infosAnimal[0]['id']?>" class="btn btn-primary">Modifier</a>
-            <a href="./appelEtPost/supprAnimal.php?id=<?=$infosAnimal[0]['id']?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer les informations sur cet animal ?')">Supprimer</a>
+            <?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo('<a href="modif-animal.php?id='.$infosAnimal[0]['id'].'" class="btn btn-primary">Modifier</a>
+            <a href="appelEtPost/supprAnimal.php?id='.$infosAnimal[0]['id'].'" class="btn btn-danger" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer les informations sur cet animal ?\')">Supprimer</a>');}?>
 
         </div>
 

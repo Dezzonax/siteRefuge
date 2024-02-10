@@ -1,7 +1,7 @@
 <?php
-if (isset($_POST["submit"])) {
+session_start();
 
-    session_start();
+if (isset($_POST["submit"]) && isset($_SESSION['check']) && $_SESSION['check'] == "log") {
 
     $_SESSION["newAnimalMsg"] = "";
 

@@ -21,7 +21,7 @@ $donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
 
         <div class="container">
 
-        <h1>Autres animaux de compagnie</h1><hr><br>
+        <h1>Autres animaux de compagnie<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-animal.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr><br>
 
         <?php if ($donneesAutres) { ?>
 
@@ -30,7 +30,7 @@ $donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
                 <?php foreach ($donneesAutres as $donneeAutre) { ?>
 
                     <div class="card" style="width: 18rem;">
-                        <img src="./medias/images/photos_animaux/<?=$donneeAutre['file_name']?>" class="card-img-top" alt="photo <?=$donneeAutre['file_name']?>">
+                        <img src="medias/images/photos_animaux/<?=$donneeAutre['file_name']?>" class="card-img-top" alt="photo <?=$donneeAutre['file_name']?>">
                         <div class="card-body">
                             <h5 class="card-title"><?=$donneeAutre['name']?></h5>
                             <p class="card-text">
@@ -63,7 +63,7 @@ $donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
                                 ?>
                             </p>
                         </div>
-                        <a href="./details-animal.php?id=<?=$donneeAutre['id']?>" class="btn btn-light">Voir plus</a>
+                        <a href="details-animal.php?id=<?=$donneeAutre['id']?>" class="btn btn-light">Voir plus</a>
                     </div>
 
                 <?php } ?>

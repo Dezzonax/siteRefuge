@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout de nouvelles offres d'emplois ou bénévolat - Refuge de Reims</title>
 
-<?php 
-session_start();
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -27,12 +26,12 @@ require('commun/header.php');
             <form action="appelEtPost/postNew-offre.php" method="post">
 
                 <div class="mb-3">
-                    <label for="job_title" class="form-label">Titre de l'offre</label>
+                    <label for="job_title" class="form-label">Titre de l'offre :</label>
                     <input type="text" name="job_title" id="job_title" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="job_description">Description de l'offre</label>
+                    <label for="job_description">Description de l'offre :</label>
                     <textarea class="form-control" name="job_description" id="job_description" rows="5" required></textarea>
                 </div>
 

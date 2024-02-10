@@ -21,7 +21,7 @@ $donneesBenevolats = $benevolats->fetchall(PDO::FETCH_ASSOC);
 
     <div class="container">
 
-    <h1>Demandes de bénévolat</h1><hr><br>
+    <h1>Demandes de bénévolat<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-offre.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr><br>
 
     <?php if ($donneesBenevolats) { ?>
 

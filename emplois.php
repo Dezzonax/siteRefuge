@@ -21,7 +21,7 @@ $donneesEmplois = $emplois->fetchall(PDO::FETCH_ASSOC);
 
     <div class="container">
 
-    <h1>Offres d'emploi</h1><hr><br>
+    <h1>Offres d'emploi<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-offre.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr><br>
 
     <?php if ($donneesEmplois) { ?>
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout d'une nouvelle actualité - Refuge de Reims</title>
 
-<?php 
-session_start();
-require('commun/header.php');
-?>
+<?php require('commun/header.php'); ?>
     
     <main>
 
@@ -27,12 +26,12 @@ require('commun/header.php');
             <form action="appelEtPost/postNew-actualite.php" method="post" enctype="multipart/form-data">
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Titre de l'actualité</label>
+                    <label for="title" class="form-label">Titre de l'actualité :</label>
                     <input type="text" name="article_title" id="title" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Ajouter une image</label>
+                    <label for="formFile" class="form-label">Ajouter une image :</label>
                     <input class="form-control" type="file" id="formFile" name="article_picture" value="Upload" accept=".png, .jpeg, .jpg, .jfif">
                 </div>
 

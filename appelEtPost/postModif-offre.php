@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit"]) && isset($_SESSION['check']) && $_SESSION['check'] == "log") {
 
     $_SESSION["modifOffreMsg"] = "";
 
