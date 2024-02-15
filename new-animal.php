@@ -124,12 +124,7 @@
                     <input type="text" name="animal_categorie" id="animal_categorie" class="form-control">
                 </div>
 
-                <input class="form-check-input" type="checkbox" name="animal_sos" id="flexCheckDefault" value="1">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Adoption SOS
-                </label>
-
-                <br><br>
+                <br>
 
                 <input type="submit" name="submit" class="btn btn-primary">
 

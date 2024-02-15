@@ -80,12 +80,7 @@ $infosAnimal = $infos->fetchall(PDO::FETCH_ASSOC);
 
                         if (isset($infosAnimal[0]['categorie'])) {
                             echo("<br><br>Catégorie: ".$infosAnimal[0]['categorie']);
-                        };
-
-                        if (isset($infosAnimal[0]['adoption_sos'])) {
-                            echo("<br><br><b>Adoption SOS !</b>");
-                        }
-                        ?>
+                        };?>
 
                     </p>
 

@@ -3,7 +3,7 @@ session_start();
 
 require('appelEtPost/dbconnect.php');
 
-$autres = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.mfi, animals.file_name, animals.birthdate, animals.adoption_sos FROM animals WHERE animals.animal_type != 'chien' AND animals.animal_type != 'chat'");
+$autres = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.mfi, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type != 'chien' AND animals.animal_type != 'chat'");
 
 $donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
 ?>
@@ -54,13 +54,8 @@ $donneesAutres = $autres->fetchall(PDO::FETCH_ASSOC);
                                     $infosautre =$infosautre.", ".$dateDiff->m." mois";
                                 };
 
-                                echo(ucfirst($infosautre));
-
-                                if ($donneeAutre['adoption_sos']) {
-                                    echo('<div class="alert alert-info" role="alert">Adoption SOS !</div>');
-                                }
+                                echo(ucfirst($infosautre));?>
                                 
-                                ?>
                             </p>
                         </div>
                         <a href="details-animal.php?id=<?=$donneeAutre['id']?>" class="btn btn-light">Voir plus</a>

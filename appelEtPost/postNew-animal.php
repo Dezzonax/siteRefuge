@@ -55,11 +55,6 @@ if (isset($_POST["submit"]) && isset($_SESSION['check']) && $_SESSION['check'] =
             $stmtPart1 = $stmtPart1.', animals.categorie';
             $stmtPart2 = $stmtPart2.',"'.$animal_categorie.'"';
         };
-        if (isset($_POST["animal_sos"]) && !empty($_POST["animal_sos"])) {
-            $animal_sos = htmlspecialchars($_POST["animal_sos"]);
-            $stmtPart1 = $stmtPart1.', animals.adoption_sos';
-            $stmtPart2 = $stmtPart2.',"'.$animal_sos.'"';
-        };
 
         $targetDir = "../medias/images/photos_animaux/";
 

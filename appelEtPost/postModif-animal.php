@@ -140,21 +140,6 @@ if (isset($_POST["submit"]) && isset($_SESSION['check']) && $_SESSION['check'] =
             $stmt = $stmt.", animals.categorie = '$animal_categorie'";
         };
 
-        if (isset($donneesAnimal[0]['adoption_sos'])) {
-
-            $animal_sos = htmlspecialchars($_POST["animal_sos"]);
-
-            if (!empty($_POST["animal_sos"])) {
-                $stmt = $stmt.", animals.adoption_sos = '$animal_sos'";
-            } else {
-                $stmt = $stmt.", animals.adoption_sos = NULL";
-            }
-
-        } elseif (!empty($_POST["animal_sos"])) {
-            $animal_sos = htmlspecialchars($_POST["animal_sos"]);
-            $stmt = $stmt.", animals.adoption_sos = '$animal_sos'";
-        };
-
         $stmt = $stmt." WHERE animals.id = '{$_POST["submit"]}'";
         $requete = $bdd->query($stmt);
 

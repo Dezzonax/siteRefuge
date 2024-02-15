@@ -35,13 +35,12 @@
                 Adoption
             </a>
             <ul class="dropdown-menu animate slideIn">
-                <li><a class="dropdown-item" href="#">Infos adoption</a></li>
+                <li><a class="dropdown-item" href="infos-adoption.php">Infos adoption</a></li>
                 <li><a class="dropdown-item" href="chiens.php">Chiens</a></li>
                 <li><a class="dropdown-item" href="chats.php">Chats</a></li>
                 <li><a class="dropdown-item" href="autres.php">Autres</a></li>
-                <li><a class="dropdown-item" href="adoptions-sos.php">Adoptions SOS</a></li>
                 <li><a class="dropdown-item" href="adoptes.php">Les adoptés</a></li>
-                <li><a class="dropdown-item" href="#">Formation chien catégorisés</a></li>
+                <li><a class="dropdown-item" href="infos-chiens-categorises.php">Infos chiens catégorisés</a></li>
             </ul>
         </li>
 

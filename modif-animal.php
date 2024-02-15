@@ -127,12 +127,7 @@ $donneesAnimal = $animal->fetchall(PDO::FETCH_ASSOC);
                     <input type="text" name="animal_categorie" id="animal_categorie" class="form-control"  <?php if ($donneesAnimal[0]["categorie"]) {echo('value="'.$donneesAnimal[0]["categorie"].'"');} ?>>
                 </div>
 
-                <input class="form-check-input" type="checkbox" name="animal_sos" id="flexCheckDefault" value="1" <?php if ($donneesAnimal[0]["adoption_sos"] == 1) {echo('checked');} ?>>
-                <label class="form-check-label" for="flexCheckDefault">
-                    Adoption SOS
-                </label>
-
-                <br><br>
+                <br>
 
                 <button type="submit" name="submit" class="btn btn-primary" value="<?=$donneesAnimal[0]['id']?>">Modifier les informations</button>
 

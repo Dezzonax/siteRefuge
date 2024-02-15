@@ -3,9 +3,13 @@ session_start();
 
 require('appelEtPost/dbconnect.php');
 
-$chats = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.mfi, animals.file_name, animals.birthdate, animals.adoption_sos FROM animals WHERE animals.animal_type = 'chat'");
+$chatsMales = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 1");
 
-$donneesChats = $chats->fetchall(PDO::FETCH_ASSOC);
+$donneesChatsMales = $chatsMales->fetchall(PDO::FETCH_ASSOC);
+
+$chatsFemelles = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 2");
+
+$donneesChatsFemelles = $chatsFemelles->fetchall(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -23,52 +27,99 @@ $donneesChats = $chats->fetchall(PDO::FETCH_ASSOC);
 
         <h1>Chats<?php if (isset($_SESSION['check']) && $_SESSION['check'] == "log") {echo(' <a href="new-animal.php" class="btn btn-primary">Nouveau</a>');}?></h1><hr><br>
 
-        <?php if ($donneesChats) { ?>
+        <?php if ($donneesChatsMales || $donneesChatsFemelles) { ?>
 
-            <div class="conteneur-de-cartes">
+            <?php if ($donneesChatsMales) { ?>
 
-                <?php foreach ($donneesChats as $donneeChat) { ?>
+                <h3>Mâles :</h3>
 
-                    <div class="card" style="width: 18rem;">
-                        <img src="medias/images/photos_animaux/<?=$donneeChat['file_name']?>" class="card-img-top" alt="photo <?=$donneeChat['file_name']?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?=$donneeChat['name']?></h5>
-                            <p class="card-text">
-                                <?php 
-                                
-                                $infoschat = "";
-                                if ($donneeChat['animal_race']) {$infoschat = $infoschat.$donneeChat['animal_race']." "; };
-                                if ($donneeChat['mfi'] == 1) {$infoschat =$infoschat.'mâle';} elseif ($donneeChat['mfi'] == 2) {$infoschat =$infoschat.'femelle';};
+                <div class="conteneur-de-cartes">
 
-                                $birthdate = new DateTime($donneeChat['birthdate']);
+                    <?php foreach ($donneesChatsMales as $donneeChatMale) { ?>
 
-                                date_default_timezone_set('Europe/Paris');
-                                $datetime = new DateTime();
-                                $dateDiff = $birthdate->diff($datetime);
+                        <div class="card" style="width: 18rem;">
+                            <img src="medias/images/photos_animaux/<?=$donneeChatMale['file_name']?>" class="card-img-top" alt="photo <?=$donneeChatMale['file_name']?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$donneeChatMale['name']?></h5>
+                                <p class="card-text">
+                                    <?php 
+                                    
+                                    $infoschat = "";
+                                    if ($donneeChatMale['animal_race']) {$infoschat = $infoschat.$donneeChatMale['animal_race']." "; };
+                                    $infoschat =$infoschat.'mâle';
 
-                                if ($dateDiff->y >= 1) {
-                                    $infoschat =$infoschat.", ".$dateDiff->y." ans";
-                                } elseif ($dateDiff->y == 1) {
-                                    $infoschat =$infoschat.", 1 an";
-                                } else {
-                                    $infoschat =$infoschat.", ".$dateDiff->m." mois";
-                                };
+                                    $birthdate = new DateTime($donneeChatMale['birthdate']);
 
-                                echo(ucfirst($infoschat));
+                                    date_default_timezone_set('Europe/Paris');
+                                    $datetime = new DateTime();
+                                    $dateDiff = $birthdate->diff($datetime);
 
-                                if ($donneeChat['adoption_sos']) {
-                                    echo('<div class="alert alert-info" role="alert">Adoption SOS !</div>');
-                                }
-                                
-                                ?>
-                            </p>
+                                    if ($dateDiff->y >= 1) {
+                                        $infoschat =$infoschat.", ".$dateDiff->y." ans";
+                                    } elseif ($dateDiff->y == 1) {
+                                        $infoschat =$infoschat.", 1 an";
+                                    } else {
+                                        $infoschat =$infoschat.", ".$dateDiff->m." mois";
+                                    };
+
+                                    echo(ucfirst($infoschat));?>
+                                    
+                                </p>
+                            </div>
+                            <a href="details-animal.php?id=<?=$donneeChatMale['id']?>" class="btn btn-light">Voir plus</a>
                         </div>
-                        <a href="details-animal.php?id=<?=$donneeChat['id']?>" class="btn btn-light">Voir plus</a>
-                    </div>
+
+                    <?php } ?>
+
+                </div>
+
+            <?php } ?>
+
+            <?php if ($donneesChatsFemelles) { ?>
+
+                <h3>Femelles :</h3>
+
+                <div class="conteneur-de-cartes">
+
+                    <?php foreach ($donneesChatsFemelles as $donneeChatFemelle) { ?>
+
+                        <div class="card" style="width: 18rem;">
+                            <img src="medias/images/photos_animaux/<?=$donneeChatFemelle['file_name']?>" class="card-img-top" alt="photo <?=$donneeChatFemelle['file_name']?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$donneeChatFemelle['name']?></h5>
+                                <p class="card-text">
+                                    <?php 
+                                    
+                                    $infoschat = "";
+                                    if ($donneeChatFemelle['animal_race']) {$infoschat = $infoschat.$donneeChatFemelle['animal_race']." "; };
+                                    $infoschat =$infoschat.'femelle';
+
+                                    $birthdate = new DateTime($donneeChatFemelle['birthdate']);
+
+                                    date_default_timezone_set('Europe/Paris');
+                                    $datetime = new DateTime();
+                                    $dateDiff = $birthdate->diff($datetime);
+
+                                    if ($dateDiff->y >= 1) {
+                                        $infoschat =$infoschat.", ".$dateDiff->y." ans";
+                                    } elseif ($dateDiff->y == 1) {
+                                        $infoschat =$infoschat.", 1 an";
+                                    } else {
+                                        $infoschat =$infoschat.", ".$dateDiff->m." mois";
+                                    };
+
+                                echo(ucfirst($infoschat));?>
+
+                                </p>
+                            </div>
+                            <a href="details-animal.php?id=<?=$donneeChatFemelle['id']?>" class="btn btn-light">Voir plus</a>
+                        </div>
+
+                    <?php } ?>
+
+                </div>
 
                 <?php } ?>
-
-            </div>
 
         <?php } else { echo("Il n'y a aucun chat disponible à l'adoption actuellement."); } ?>
 
