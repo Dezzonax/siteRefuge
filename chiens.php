@@ -81,6 +81,8 @@ $donneesChiensFemelles = $chiensFemelles->fetchall(PDO::FETCH_ASSOC);
 
             <?php if ($donneesChiensFemelles) { ?>
 
+                <br>
+
                 <h3>Femelles :</h3>
 
                 <div class="conteneur-de-cartes">

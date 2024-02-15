@@ -77,6 +77,8 @@ $donneesChatsFemelles = $chatsFemelles->fetchall(PDO::FETCH_ASSOC);
 
             <?php if ($donneesChatsFemelles) { ?>
 
+                <br>
+
                 <h3>Femelles :</h3>
 
                 <div class="conteneur-de-cartes">
