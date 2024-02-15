@@ -17,7 +17,7 @@
             <ul>
                 <li>Chien ou chiot mâle : 250 €</li>
                 <li>Chien ou chiot femelle : 300 €</li>
-                <li>Chien mâle/femelle de plus de 8 ans : 150 €</li>
+                <li>Chien mâle ou femelle de plus de 8 ans : 150 €</li>
                 <li>Chien mâle ou femelle de plus de 10 ans : Don libre</li>
             </ul>
 
@@ -48,7 +48,7 @@
             <a href="medias/documents/certificat-d-engagement-et-de-connaissance-chat.pdf" target="_blank" class="btn btn-outline-primary">Certificat d'engagement et de connaissance chat</a>
             <a href="medias/documents/certificat-d-engagement-et-de-connaissance-nac.pdf" target="_blank" class="btn btn-outline-primary">Certificat d'engagement et de connaissance nac</a>
 
-            <br>
+            <br><br>
 
         </div>
 

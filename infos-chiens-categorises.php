@@ -63,6 +63,8 @@
 
             <p style="color: red; font-weight: 500;">Le refuge s'engage à vous fournir les informations nécessaires et vous accompagne tout au long de la procédure.</p>
 
+            <br>
+
         </div>
 
     </main>
