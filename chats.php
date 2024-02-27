@@ -3,11 +3,11 @@ session_start();
 
 require('appelEtPost/dbconnect.php');
 
-$chatsMales = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 1");
+$chatsMales = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 1 ORDER BY animals.name");
 
 $donneesChatsMales = $chatsMales->fetchall(PDO::FETCH_ASSOC);
 
-$chatsFemelles = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 2");
+$chatsFemelles = $bdd->query("SELECT animals.id, animals.name, animals.animal_race, animals.file_name, animals.birthdate FROM animals WHERE animals.animal_type = 'chat' AND animals.mfi = 2 ORDER BY animals.name");
 
 $donneesChatsFemelles = $chatsFemelles->fetchall(PDO::FETCH_ASSOC);
 ?>

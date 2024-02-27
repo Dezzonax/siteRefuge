@@ -29,16 +29,16 @@
                 <li>Lapin ou furet : 100 €</li>
             </ul>
 
-            <p>Ces frais comprennent l'identification, la vaccination, la stérilisation et le déparasitage de l'animal.</p>
-            <p>Justificatifs à fournir pour toute adoption :</p>
+            <p>Ces frais comprennent l'identification, la vaccination, la stérilisation et le déparasitage de l'animal.<br><br>
+
+            Justificatifs à fournir pour toute adoption :</p>
             <ul>
                 <li>Pièce d'identité</li>
                 <li>Justificatif de domicile de moins de 3 mois</li>
             </ul>
 
-            <p>En application de la loi sur la maltraitance animale du 30 novembre 2021, les conditions d'adoption d'animaux, que ce soit dans les élevages, animaleries ou refuges sont modifiés.</p>
-
-            <p>Il est dorénavant demandé aux futurs adoptants :</p> 
+            <p>En application de la loi sur la maltraitance animale du 30 novembre 2021, les conditions d'adoption d'animaux, que ce soit dans les élevages, animaleries ou refuges sont modifiés.<br>
+            Il est dorénavant demandé aux futurs adoptants :</p> 
             <ul>
                 <li>De prendre connaissance et de signer un certificat d'engagement et de connaissance des besoins physiologiques, comportementaux, médicaux, financiers et logistiques de l'animal (certificats en téléchargement ci-dessous).</li>
                 <li>De respecter un délais de 7 jours de réflexion entre la réservation et l'adoption de l'animal.</li>

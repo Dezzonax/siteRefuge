@@ -84,7 +84,7 @@
 
                 <div class="mb-3">
                     <label for="animal_birthdate" class="form-label">Date de naissance de l'animal :</label>
-                    <input type="date" name="animal_birthdate" id="animal_birthdate" class="form-control">
+                    <input type="date" name="animal_birthdate" id="animal_birthdate" class="form-control" required>
                 </div>
 
                 <div class="form-group">

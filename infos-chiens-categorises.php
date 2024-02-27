@@ -30,9 +30,9 @@
 
             <h4><u>Procédure chien catégorisé :</u></h4>
 
-            <p>Pour les chiens de catégorie 1 l'adoptant sera le détenteur de l'animal mais pas son propriétaire, c'est à dire que l'animal vivra chez son adoptant mais il doit rester à vie au nom du refuge.</p>
+            <p>Pour les chiens de catégorie 1 l'adoptant sera le détenteur de l'animal mais pas son propriétaire, c'est à dire que l'animal vivra chez son adoptant mais il doit rester à vie au nom du refuge.<br><br>
 
-            <p>Compris dans les frais d'adoption :</p>
+            Compris dans les frais d'adoption :</p>
             <ul>
                 <li>Identification</li>
                 <li>Vaccination de base et vaccin contre la rage</li>

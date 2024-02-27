@@ -87,7 +87,7 @@ $donneesAnimal = $animal->fetchall(PDO::FETCH_ASSOC);
 
                 <div class="mb-3">
                     <label for="animal_birthdate" class="form-label">Date de naissance de l'animal :</label>
-                    <input type="date" name="animal_birthdate" id="animal_birthdate" class="form-control" <?php if ($donneesAnimal[0]["birthdate"]) {echo('value="'.$donneesAnimal[0]["birthdate"].'"');} ?>>
+                    <input type="date" name="animal_birthdate" id="animal_birthdate" class="form-control" required <?php if ($donneesAnimal[0]["birthdate"]) {echo('value="'.$donneesAnimal[0]["birthdate"].'"');} ?>>
                 </div>
 
                 <div class="form-group">
